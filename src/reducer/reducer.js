@@ -8,7 +8,7 @@ export const reducer = (state, action) => {
       }
     case "ADD_AMOUNT":
       return {
-        expenses: [...state.expenses, ...action.data],
+        expenses: [...state.expenses, action.data],
         type: state.type
       }
     case "REMOVE_EXPENSE":
