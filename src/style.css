@@ -1,0 +1,229 @@
+* {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+
+:root {
+  font-family: "Lato", "sans-serif";
+  font-size: 62.5%;
+}
+
+body {
+  background-color: #292F36;
+  color: #fff;
+}
+
+.container {
+  width: 1200px;
+  margin: auto;
+  display: grid;
+  
+}
+
+.switch__expense,
+.switch__income {
+  position: relative;
+  padding: 1rem 0;
+}
+
+.switch {
+  font-size: 2rem;
+  margin-top: 2rem;
+  margin: 0 auto;
+  display: flex;
+  align-items: center;
+  width: 250px;
+  justify-content: space-between;
+}
+
+.left {
+  position: relative;
+}
+
+.left::after {
+  position: absolute;
+  top: 0;
+  left: 10px;
+  width: 100%;
+  height: 100px;
+  background-color: orange;
+  z-index: 2;
+}
+
+.switch input {
+  display: none;
+  visibility: hidden;
+}
+
+.switch__container {
+  display: inline-block;
+  width: 50px;
+  height: 20px;
+  background-color: #191D20;
+  border-radius: 10px;
+  cursor: pointer;
+}
+
+.switch__toggle:checked + .switch__slider {
+  transform: translateX(30px)
+}
+
+.switch__slider {
+  display: inline-block;
+  width: 20px;
+  height: 20px;
+  border-radius: 50%;
+  background-color: #FF6B6B;
+  transition: all .5s ease-in-out;
+}
+
+.current::before {
+  content: "";
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  height: 5px;
+  width: 100%;
+  background-color: #FF6B6B;
+  animation: switchSides ease-in 1s forwards;
+}
+
+@keyframes switchSides {
+  0% {
+    width: 0%
+  }
+
+  100% {
+    width: 100%;
+  }
+}
+
+
+
+
+/* Form */
+.form {
+  display: flex;
+  align-items: center;
+  flex-direction: column;
+  justify-content: space-around;
+  position: relative;
+  margin: 0 auto;
+  margin-top: 4rem;
+  width: 55%;
+}
+
+.form__add {
+  margin-top: 2rem;
+  color: #191D20;
+  font-weight: bold;
+  border: none;
+  padding: 1rem 2rem;
+  background-color: #FFE66D
+}
+
+.form::before {
+  content: "";
+  position: absolute;
+  bottom: -2rem;
+  right: -50%;
+  transform: translateX(-50%);
+  width: 100%;
+  height: 10rem;
+  background-color: #191D20;
+  z-index: -1;
+}
+
+.form__type,
+.form__amount,
+.form__currency {
+  padding: 1rem;
+  margin: 0 1rem;
+  border: 2px solid #FF6B6B;
+}
+
+.form__currency {
+  padding: .5rem;
+}
+
+/* Alert */
+.alert {
+  background: red;
+}
+
+/* Expenses */
+.expenses__container {
+  display: flex;
+  justify-content: space-between;
+  width: 100%;
+  margin-top: 4rem;
+}
+
+.expenses__control {
+  display: flex;
+  justify-content: center;
+  margin-right: 2rem;
+}
+
+.expenses__sort, .expenses__filter {
+  font-size: 1.5rem;
+  margin: 0 1rem;
+}
+
+.expenses__control select {
+  padding: 1rem;
+}
+
+.expenses__cards {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  grid-template-rows: repeat(2, max-content);
+  grid-gap: 1rem;
+}
+
+.expense__card {
+  background-color: #191D20;
+  padding: 4rem 4rem;
+  color: #fff;
+  margin: 2rem 0;
+  position: relative;
+  align-self: center;
+}
+
+.expense__card-label {
+  position: absolute;
+  top: 0;
+  left: 0;
+  padding: .5rem;
+  color: #fff;
+}
+
+.expense__card-remove {
+  position: absolute;
+  bottom: 0;
+  right: 0;
+  border: none;
+  background-color: #F13D3D;
+  padding: 1rem 1.2rem;
+  color: #fff;
+  cursor: pointer;
+}
+
+.expense {
+  background-color: #FF6B6B;
+}
+
+.income {
+  background-color: #4ECDC4;
+}
+
+.expense__card-amount {
+  font-weight: 300;
+  font-size: 1.5rem;
+}
+
+.graph {
+  
+}
+
